@@ -11,9 +11,7 @@ require("backbone/stickit");
 app.appRouter = new AppRouter();
 
 app.addRegions({
-    main: ".js-main",
-    header: ".js-header",
-    deck: ".js-deck"
+    main: ".js-main"
 });
 
 app.addInitializer(function() {
