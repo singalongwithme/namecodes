@@ -19,6 +19,17 @@ define(function(require, exports, module) {
 			footer: ".js-footer"
 		},
 
+		childEvents: {
+			"show:deck": "onChildShowDeck"
+		},
+
+
+		initialize: function() {
+			this.app = app;
+
+			this.getWordsList();
+		},
+
 		getWordsList: function() {
 
 			// _.bindAll(this, "onGetWordsSuccess");
@@ -30,7 +41,7 @@ define(function(require, exports, module) {
 			function onGetWordsSuccess(words) {
 				this.wordsList = words.data;
 
-				this.getRegion("header").show(new HeaderView({ wordsList: this.wordsList }));
+				this.showChildView("header", new HeaderView({ wordsList: this.wordsList }));
 			}
 
 			function onGetWordsFail(words) {
@@ -38,10 +49,8 @@ define(function(require, exports, module) {
 			}
 		},
 
-		initialize: function() {
-			this.app = app;
-
-			this.getWordsList();
+		onChildShowDeck: function(childView, deck) {
+			console.log(deck);
 		}
 		
 	});
