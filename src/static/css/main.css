@@ -1,19 +1,38 @@
 /* line 1, ../scss/_card.scss */
-.blue-card {
+.has-been-selected {
+  pointer-events: none;
+}
+/* line 5, ../scss/_card.scss */
+.has-been-selected.blue-card {
   background-color: #4286f4;
 }
-
-/* line 2, ../scss/_card.scss */
-.red-card {
+/* line 6, ../scss/_card.scss */
+.has-been-selected.red-card {
   background-color: #aa2222;
 }
-
-/* line 3, ../scss/_card.scss */
-.black-card {
+/* line 7, ../scss/_card.scss */
+.has-been-selected.black-card {
   background-color: #302c2c;
 }
+/* line 8, ../scss/_card.scss */
+.has-been-selected.white-card {
+  background-color: #ffefce;
+}
 
-/* line 4, ../scss/_card.scss */
-.white-card {
+/* styling for cards in spymaster view */
+/* line 4, ../scss/_spymaster.scss */
+.is-spymaster .blue-card {
+  background-color: #4286f4;
+}
+/* line 5, ../scss/_spymaster.scss */
+.is-spymaster .red-card {
+  background-color: #aa2222;
+}
+/* line 6, ../scss/_spymaster.scss */
+.is-spymaster .black-card {
+  background-color: #302c2c;
+}
+/* line 7, ../scss/_spymaster.scss */
+.is-spymaster .white-card {
   background-color: #ffefce;
 }

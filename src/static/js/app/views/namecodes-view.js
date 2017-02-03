@@ -15,6 +15,10 @@ define(function(require, exports, module) {
 
 		template: NamecodesTemplate,
 
+		ui: {
+			deck: ".js-deck"
+		},
+
 		regions: {
 			header: ".js-header",
 			deck: ".js-deck",
@@ -22,7 +26,8 @@ define(function(require, exports, module) {
 		},
 
 		childEvents: {
-			"show:deck": "onChildShowDeck"
+			"show:deck": "onChildShowDeck",
+			"enable:spymaster": "onEnableSpymaster"
 		},
 
 
@@ -52,7 +57,6 @@ define(function(require, exports, module) {
 		},
 
 		onChildShowDeck: function(childView, list) {
-			// var deck = new Deck(filteredDeck);
 			var deck = this.mapFilteredDeck(list);
 
 			this.showChildView("deck", new DeckView({ collection: deck }));
@@ -100,6 +104,10 @@ define(function(require, exports, module) {
 			});
 
 			return new Deck(mapped);
+		},
+
+		onEnableSpymaster: function(e) {
+			this.ui.deck.toggleClass("is-spymaster");
 		}
 		
 	});

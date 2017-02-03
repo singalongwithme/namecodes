@@ -21,7 +21,8 @@ define(function(require, exports, module){
 		},
 
 		events: {
-			"keyup @ui.input": "filterDeck"
+			"keyup @ui.input": "filterDeck",
+			"click @ui.spymaster": "enableSpymaster"
 		},
 
 		initialize: function() {
@@ -47,6 +48,10 @@ define(function(require, exports, module){
 
 		onDeckCreated: function(deck) {
 			this.triggerMethod("show:deck", deck);
+		},
+
+		enableSpymaster: function() {
+			this.triggerMethod("enable:spymaster");
 		}
 
 	});

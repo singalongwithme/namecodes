@@ -1,4 +1,9 @@
-.blue-card { background-color: $blue; }
-.red-card { background-color: $red; }
-.black-card { background-color: $black; }
-.beige-card { background-color: $beige; }
+.has-been-selected {
+	// once they click, can't undo
+	pointer-events: none;
+
+	&.blue-card { background-color: $blue; }
+	&.red-card { background-color: $red; }
+	&.black-card { background-color: $black; }
+	&.white-card { background-color: $beige; }
+}
