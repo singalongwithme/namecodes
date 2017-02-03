@@ -1,4 +1,19 @@
-/* line 1, ../scss/main.scss */
-body {
-  margin: 0;
+/* line 1, ../scss/_card.scss */
+.blue-card {
+  background-color: #4286f4;
+}
+
+/* line 2, ../scss/_card.scss */
+.red-card {
+  background-color: #aa2222;
+}
+
+/* line 3, ../scss/_card.scss */
+.black-card {
+  background-color: #302c2c;
+}
+
+/* line 4, ../scss/_card.scss */
+.white-card {
+  background-color: #ffefce;
 }
