@@ -6,6 +6,7 @@ define(function(require, exports, module){
 	var app = require("app/app");
 
 	var HeaderTemplate = require("hbs!../templates/header");
+	var Deck = require("../collections/deck").Deck;
 
 	var HeaderView = marionette.ItemView.extend({
 
@@ -24,7 +25,7 @@ define(function(require, exports, module){
 		},
 
 		initialize: function() {
-			this.wordsList = this.options.wordsList;
+			this.words_list = this.options.words_list;
 
 			_.bindAll(this, 'filterDeck');
 		},
@@ -37,8 +38,8 @@ define(function(require, exports, module){
 			Math.seedrandom(this.ui.input.val());
 
 			for (var i = 0; i < DECK_SIZE; i++) {
-				var index = Math.floor(Math.random() * this.wordsList.length);
-				gameDeck.push(this.wordsList[index]);
+				var index = Math.floor(Math.random() * this.words_list.length);
+				gameDeck.push(this.words_list[index]);
 			}
 
 			this.onDeckCreated(gameDeck);
