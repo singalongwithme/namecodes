@@ -1,8 +1,27 @@
 /* styling for cards in spymaster view */
 
 .is-spymaster {
+	.blue-card,
+	.red-card,
+	.black-card {
+		.card-word {
+			color: #fff;
+		}
+	}
+
 	.blue-card { background-color: $blue; }
 	.red-card { background-color: $red; }
 	.black-card { background-color: $black; }
 	.white-card { background-color: $beige; }
+
+	.has-been-selected {
+		pointer-events: auto;
+		opacity: 0.4;
+	}
+
+	.card {
+		&:hover {
+			animation: none;
+		}
+	}
 }

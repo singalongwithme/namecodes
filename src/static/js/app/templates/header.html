@@ -1,4 +1,17 @@
 <h1 class="app-title">namecodes.</h1>
-<input class="js-input" type="text" />
-<button class="js-spymaster-btn spymaster-btn">Spymaster</button>
-<button class="js-reset-btn reset-btn">Reset</button>
+
+<div class="controls">
+	<input class="js-input" type="text" />
+	<button class="js-spymaster-btn spymaster-btn">Spymaster</button>
+	<button class="js-reset-btn reset-btn">Reset</button>
+</div>
+<div class="scoreboard">
+	<div class="score">
+		<h3 class="team-red">red</h3>
+		<p class="js-red-score">{{ score.red }}</p>
+	</div>
+	<div class="score">
+		<h3 class="team-blue">blue</h3>
+		<p class="js-blue-score">{{ score.blue }}</p>
+	</div>
+</div>

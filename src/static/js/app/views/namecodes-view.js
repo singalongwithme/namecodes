@@ -39,16 +39,19 @@ define(function(require, exports, module) {
 
 		getWordsList: function() {
 
-			// _.bindAll(this, "onGetWordsSuccess");
-
 			$.get("data.json")
 				.done(onGetWordsSuccess.bind(this))
 				.fail(onGetWordsFail);
 
 			function onGetWordsSuccess(words) {
+				var score = {
+					blue: 9,
+					red: 8
+				}
+
 				this.words_list = words.data;
 
-				this.showChildView("header", new HeaderView({ words_list: this.words_list }));
+				this.showChildView("header", new HeaderView({ words_list: this.words_list, score: score }));
 			}
 
 			function onGetWordsFail(words) {
@@ -64,38 +67,31 @@ define(function(require, exports, module) {
 
 		mapFilteredDeck: function(list) {
 
-			var BLUE_LIMIT = 8;
-			var RED_LIMIT = 7;
+			var BLUE_LIMIT = 9;
+			var RED_LIMIT = 8;
 			var BLACK_LIMIT = 1;
-			var WHITE_LIMIT = 9;
+			var WHITE_LIMIT = 7;
 
 			var colors = {
-				'blue': {
-					limit: BLUE_LIMIT
-				},
-				'red': {
-					limit: RED_LIMIT
-				},
-				'black': {
-					limit: BLACK_LIMIT
-				},
-				'white': {
-					limit: WHITE_LIMIT
-				}
+				'blue': BLUE_LIMIT,
+				'red': RED_LIMIT,
+				'black': BLACK_LIMIT,
+				'white': WHITE_LIMIT
 			}
 
-			var keys = Object.keys(colors);
+			var keys = [];
+
+			for (key in colors) {
+				for (var i = 0; i < colors[key]; i++) {
+					keys.push(key);
+				}
+			}
 
 			var mapped = _.map(list, function(value, index) {
 				var random_index = Math.floor(Math.random() * keys.length);
 				var color_key = keys[random_index];
-				var color = colors[color_key];
 
-				color['limit'] -= 1;
-
-				if (color['limit'] === 0) {
-					keys.splice(random_index, 1);
-				}
+				keys.splice(random_index, 1);
 
 				return { 
 					word: value,

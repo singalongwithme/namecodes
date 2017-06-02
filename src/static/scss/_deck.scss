@@ -1,0 +1,34 @@
+.card-container {
+	padding: 0 15px;
+	
+	.col {
+		display: inline-block;
+		width: 45%;
+		margin: 6px 2.5% 10px;
+	}
+
+	@include breakpoint-sm {
+		.col {
+			width: 30%;
+			margin: 8px 1.5% 12px;
+		}
+	}
+
+	@include breakpoint-md {
+		.col {
+			width: 22%;
+		}
+	}
+
+	@include breakpoint-lg {
+		.col {
+			width: 17%;
+		}
+	}
+
+	@include breakpoint-xl {
+		.col {
+			margin: 0.5% 1.5%;
+		}
+	}
+}

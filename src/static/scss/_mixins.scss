@@ -1,0 +1,54 @@
+////////////////////
+// Variables
+////////////////////
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 998px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
+
+////////////////////
+// Breakpoints
+////////////////////
+
+@mixin breakpoint-xs {
+	@media (min-width: $breakpoint-xs) {
+		@content;
+	}
+}
+
+@mixin breakpoint-sm {
+	@media (min-width: $breakpoint-sm) {
+		@content;
+	}
+}
+
+@mixin breakpoint-md {
+	@media (min-width: $breakpoint-md) {
+		@content;
+	}
+}
+
+@mixin breakpoint-lg {
+	@media (min-width: $breakpoint-lg) {
+		@content;
+	}
+}
+
+// For TVs
+@mixin breakpoint-xl {
+	@media (min-width: $breakpoint-xl) {
+		@content;
+	}
+}
+
+////////////////////
+// Browser Compatibility
+////////////////////
+
+@mixin cross_browser($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}

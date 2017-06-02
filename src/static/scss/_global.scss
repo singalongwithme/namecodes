@@ -1,5 +1,47 @@
-$blue: rgb(66, 134, 244);
-$red: rgb(170, 34, 34);
+$blue: #5C6BC0;
+$red: #E53935;
 $black: rgb(48, 44, 44);
 $white: rgb(250, 235, 215);
 $beige: rgb(255, 239, 206);
+$bg-color: #fff;
+$header-bg-color: #607D8B;
+
+$generic-white: #fff;
+
+$base-font: "Helvetica Neue", sans-serif;
+
+body {
+	background-color: $bg-color;
+    margin: 0;
+}
+
+//////////////////////////////
+
+// Animations
+
+//////////////////////////////
+
+@keyframes toggleBgColor {
+	0% { background-color: $white; }
+	10% { background-color: $blue; }
+	35% { background-color: $red; }
+	60% { background-color: $beige; }
+	85% { background-color: $black; }
+	100% { background-color: $white; }
+} 
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes gradient { 
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}

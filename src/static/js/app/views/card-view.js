@@ -1,12 +1,11 @@
 define(function(require, exports, module) {
-	var marionette = require('marionette');
+	var marionette = require("marionette");
+	var backbone = require("backbone");
 	var CardTemplate = require("hbs!../templates/card");
 
 	var CardView = marionette.ItemView.extend({
 		
-		tagName: "div",
-
-		className: "card-row",
+		className: "col",
 
 		template: CardTemplate,
 
@@ -15,21 +14,33 @@ define(function(require, exports, module) {
 		},
 
 		events: {
-			"click @ui.card": "hasBeenSelected"
+			"click @ui.card": "cardClickHandler"
 		},
 
 		initialize: function() {
+			backbone.on("reset:deck", this.reset, this);
+
 			_.bindAll(this, "hasBeenSelected");
 		},
 
 		hasBeenSelected: function(e) {
 			e.preventDefault();
 
-			$(e.currentTarget).addClass("has-been-selected");
+			$(e.currentTarget).toggleClass("has-been-selected");
+		},
+
+		triggerUpdateScore: function(e) {
+			backbone.trigger("update:score", e.currentTarget);
+		},
+
+		cardClickHandler: function(e) {
+			this.hasBeenSelected(e);
+			this.triggerUpdateScore(e);
+		},
+
+		reset: function(e) {
+			this.$el.find(".js-card").removeClass("has-been-selected");
 		}
-
-
-		
 	});
 
 	exports.CardView = CardView;

@@ -1,24 +1,23 @@
 define(function(require, exports, module) {
 
+var backbone = require("backbone");
 var marionette = require("marionette");
 var _ = require("underscore");
 
 var CardView = require("./card-view").CardView;
+var DeckTemplate = require("hbs!../templates/deck");
 
-var DeckView = marionette.CollectionView.extend({
+var DeckView = marionette.CompositeView.extend({
 
 	className: "js-cards-container card-container",
 
-	childView: CardView,
+	template: DeckTemplate,
 
-	// adds onto render, instead of rewriting
-	// need to call super if want to use render:
+	childView: CardView,
 
 	initialize: function() {
 	},
 
-	onRender: function() {
-	}
 });
 
 exports.DeckView = DeckView;

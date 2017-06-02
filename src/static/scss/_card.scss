@@ -1,9 +1,69 @@
+.card {
+	padding: 10px;
+	border-top: 1px solid #E0E0E0;
+	border-radius: 15px;
+	transition: all 0.25s linear;
+
+	@include cross-browser(box-shadow, rgba(0, 0, 0, 0.3) 0 8px 8px 0);
+
+	.card-word {
+		padding: 8px 0;
+		text-align: center;
+		text-transform: lowercase;
+		font-family: $base-font;
+		font-size: 16px;
+		font-weight: 200;
+	}
+
+	&:hover {
+		cursor: pointer;
+		z-index:1000;
+		
+		@include cross-browser(box-shadow, rgba(0, 0, 0, 0.3) 2px 10px 10px 2px);
+	}
+
+	@include breakpoint-xs {
+		.card-word {
+			padding: 14px 0;
+		}
+	}
+
+	@include breakpoint-sm {
+		.card-word {
+			padding: 20px 0;
+			font-size: 20px;
+		}
+	}
+
+	@include breakpoint-lg {
+		.card-word {
+			font-size: 24px;
+		}
+	}
+
+	@include breakpoint-xl {
+		.card-word {
+			font-size: 36px;
+			padding: 8% 0;
+		}
+	}
+}
+
 .has-been-selected {
 	// once they click, can't undo
 	pointer-events: none;
 
+	&:hover {
+		animation: none;
+	}
 	&.blue-card { background-color: $blue; }
 	&.red-card { background-color: $red; }
-	&.black-card { background-color: $black; }
+	&.black-card { 
+		background-color: $black; 
+
+		.card-word {
+			color: #fff;
+		}
+	}
 	&.white-card { background-color: $beige; }
 }

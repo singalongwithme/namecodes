@@ -1,0 +1,115 @@
+header {
+	position: relative;
+	padding: 0 15px 20px;
+	margin-bottom: 15px;
+
+	background-color: $header-bg-color;
+
+	.app-title {
+		margin: 0;
+		padding: 20px 0 10px;
+		font-family: $base-font;
+		color: $generic-white;
+		text-align: center;
+	}
+
+	.controls {
+		text-align: center;
+	}
+
+	.scoreboard {
+		margin-top: 12px;
+		text-align: center;
+
+		.score {
+			display: inline-block;
+			width: 120px;
+			background-color: $generic-white;
+
+			h3 { 
+				padding: 8px 0;
+				margin: 0; 
+				font-size: 16px;
+				font-family: $base-font;
+				color: $generic-white;
+			}
+
+			p {
+				margin: 8px 0;
+				font-family: $base-font;
+				font-weight: 400;
+			}
+
+			.team-red { background-color: $red; }
+			.team-blue { background-color: $blue; }
+		}
+	}
+
+	input {
+		font-family: $base-font;
+		font-size: 12px;
+		outline: none;
+	}
+
+	button {
+		color: $generic-white;
+		font-size: 12px;
+		text-transform: lowercase;
+		background-color: transparent;
+		border: 2px solid $generic-white;
+		outline: none;
+	}
+
+	@include breakpoint-xs {
+		input, button {
+			font-size: 14px;
+		}
+	}
+
+	@include breakpoint-sm {
+
+		.app-title {
+			text-align: left;
+		}
+
+		.controls {
+			text-align: left;
+		}
+
+		.scoreboard {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 25px 15px 20px 0;
+		}
+
+		input, button {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 16px;
+		}
+	}
+
+	@include breakpoint-lg {
+
+		.scoreboard {
+			margin: 30px 15px 20px 0;
+		}
+
+		.score {
+
+			h3 {
+				font-size: 20px;
+			}
+
+			p { font-size: 20px; }
+		}
+
+		button {
+			padding: 6px 12px;
+			font-size: 20px;
+		}
+
+		input { font-size: 20px; }
+	}
+}
