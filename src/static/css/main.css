@@ -258,42 +258,43 @@ header button {
 @media (min-width: 1200px) {
   /* line 39, ../scss/_card.scss */
   .card .card-word {
+    padding: 2.5px 0;
     font-size: 24px;
   }
 }
 @media (min-width: 1400px) {
-  /* line 45, ../scss/_card.scss */
+  /* line 46, ../scss/_card.scss */
   .card .card-word {
     font-size: 36px;
     padding: 8% 0;
   }
 }
 
-/* line 52, ../scss/_card.scss */
+/* line 53, ../scss/_card.scss */
 .has-been-selected {
   pointer-events: none;
 }
-/* line 56, ../scss/_card.scss */
+/* line 57, ../scss/_card.scss */
 .has-been-selected:hover {
   animation: none;
 }
-/* line 59, ../scss/_card.scss */
+/* line 60, ../scss/_card.scss */
 .has-been-selected.blue-card {
   background-color: #5C6BC0;
 }
-/* line 60, ../scss/_card.scss */
+/* line 61, ../scss/_card.scss */
 .has-been-selected.red-card {
   background-color: #E53935;
 }
-/* line 61, ../scss/_card.scss */
+/* line 62, ../scss/_card.scss */
 .has-been-selected.black-card {
   background-color: #302c2c;
 }
-/* line 64, ../scss/_card.scss */
+/* line 65, ../scss/_card.scss */
 .has-been-selected.black-card .card-word {
   color: #fff;
 }
-/* line 68, ../scss/_card.scss */
+/* line 69, ../scss/_card.scss */
 .has-been-selected.white-card {
   background-color: #ffefce;
 }
