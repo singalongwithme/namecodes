@@ -39,7 +39,7 @@ define(function(require, exports, module) {
 
 		getWordsList: function() {
 
-			$.get("data.json")
+			$.get("src/data.json")
 				.done(onGetWordsSuccess.bind(this))
 				.fail(onGetWordsFail);
 

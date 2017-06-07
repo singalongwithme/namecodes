@@ -3,7 +3,7 @@ var run = require("gulp-run");
 var runSequence = require("run-sequence");
 var del = require("del");
 
-var SRC_PATH = "src";
+var SRC_PATH = "./";
 var BUILD_PATH = "build";
 var STATIC_PATH = SRC_PATH + "/static";
 var BUILD_STATIC_PATH = BUILD_PATH + "/static"

@@ -16,7 +16,6 @@ var GridRowView = marionette.CompositeView.extend({
 
 	initialize: function() {
 		this.collection = new backbone.Collection(_.toArray(this.model.attributes));
-		console.log(this.collection);
 	}
 	
 });

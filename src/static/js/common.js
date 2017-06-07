@@ -1,6 +1,6 @@
 require.config({
 
-  baseUrl: "static/js",
+  baseUrl: "src/static/js",
 
   paths : {
     "marionette": "vendor/backbone/marionette",
